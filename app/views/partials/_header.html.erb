@@ -4,5 +4,10 @@
     <li><a class="text-success" href="#">Feed </a></li>
     <li><a class="text-success" href="#">Follows </a></li>
     <li><a class="text-success" href="#">Repositories </a></li>
-    <li>  <%= link_to "Login", "#" %> </li>
+    <% if current_user %>
+        <li>  Hello, <%= current_user.uid %> </li>
+        <li> <%= link_to "Logout", logout_path, method: :delete %> </li>
+    <% else %>
+        <li>  <%= link_to "Login", github_login_path %> </li>
+    <% end %>
 </ul>
