@@ -34,7 +34,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-rails'
   gem 'pry-nav'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'shoulda-matchers', '~> 3.1'
 end
+
+gem "simplecov", require: false, group: :test
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
