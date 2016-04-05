@@ -36,9 +36,12 @@ gem 'omniauth-github'
 gem 'figaro'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-rails'
   gem 'pry-nav'
+  gem 'capybara'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'simplecov', require: false, group: :test
 end
 
 group :development do
