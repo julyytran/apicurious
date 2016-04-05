@@ -9,7 +9,7 @@ module SpecHelpers
         nickname: "julyytran"
             },
       credentials: {
-        token: "09083e66dff7a87925eeddbc92eb7a2756b57fcd"
+        token: ENV['GITHUB_TEST_TOKEN']
                     },
       extra: {
         raw_info: {
