@@ -9,3 +9,6 @@ script:
   - bundle exec rake db:test:prepare
   - bundle exec rake
 cache: bundler
+
+notifications:
+  email: false
