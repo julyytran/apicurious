@@ -26,7 +26,21 @@ class GithubService
   def repositories
     get("/user/repos")
   end
-  
+
+  def user_repo_commits
+    all_events = get("/users/#{user.nickname}/events")
+
+    pushes = all_events.select do |event|
+      event["type"] == "PushEvent"
+    end
+
+    repo_commits = pushes.map do |push|
+      { push["repo"]["name"] => push["payload"]["commits"].map do |commit|
+        commit["message"]
+      end}
+    end
+  end
+
 private
 
   def get(path)

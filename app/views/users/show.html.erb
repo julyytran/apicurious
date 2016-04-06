@@ -23,3 +23,9 @@
 <% @service.repositories.each do |repo| %>
   <%= repo["name"] %>
 <% end %>
+
+<h3>My Recent Commits</h3>
+<% @service.user_repo_commits.each do |repo_commits| %>
+  <%= repo_commits.keys.first %>
+  <%= repo_commits.values.flatten.join(",") %>
+<% end %>
