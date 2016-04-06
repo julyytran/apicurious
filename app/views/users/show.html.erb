@@ -1,8 +1,21 @@
 <div class="container text-center">
 
-<div class ="my-info">
+<div class ="info">
 <h1><%= current_user.nickname %>'s Info</h1>
 <img src= "<%= current_user.image %>" height="200px">
+</div>
+
+<div class = "vertical-buffer">
+  <h3> Contributions</h3>
+  <div class = "contrib">
+    <p> In last year: <%= @contributions.in_past_year %></p>
+  </div>
+  <div class = "contrib">
+    <p> Longest streak: <%= @contributions.longest_streak %></p>
+  </div>
+  <div class = "contrib">
+    <p> Current streak: <%= @contributions.current_streak %></p>
+  </div>
 </div>
 
 <div class = "vertical-buffer">
