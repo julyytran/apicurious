@@ -1,9 +1,9 @@
 <ul class="nav nav-tabs nav-justified">
     <% if current_user %>
+    <li>  <%= link_to "Home", root_path %> </li>
+    <li> <%= link_to "Feed", feeds_path %></li>
     <li><a class="text-success" href="#">Contributions </a></li>
-    <li><a class="text-success" href="#">Feed </a></li>
-    <li> <%= link_to "Account Info", user_path(current_user) %> </li>
-        <li>  <%= link_to "Hello, #{current_user.name}", root_path %> </li>
+    <li> <%= link_to "#{current_user.nickname}'s Account Info", user_path(current_user) %> </li>
         <li> <%= link_to "Logout", logout_path, method: :delete %> </li>
     <% else %>
         <li>  <%= link_to "Login", github_login_path %> </li>

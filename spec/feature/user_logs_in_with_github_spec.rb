@@ -16,7 +16,7 @@ class UserLogsInWithGithubTest < ActionDispatch::IntegrationTest
       click_on "Login"
 
       expect(current_path).to eq root_path
-      expect(page).to have_content "July Tran"
+      expect(page).to have_content "julyytran's Account Info"
       expect(page).to have_link "Logout"
       expect(page).to_not have_link "Login"
     end

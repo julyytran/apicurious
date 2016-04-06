@@ -1,0 +1,25 @@
+<div class = "container text-center vertical-buffer">
+<h3><%= current_user.nickname %>'s Recent Commits</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Repo</th>
+      <th>Commits</th>
+    </tr>
+  </thead>
+  <tbody>
+    <div class="repo-commits-info">
+<% @service.user_repo_commits.each do |repo_commits| %>
+<tr>
+  <td><%= repo_commits.keys.first %></td>
+  <td class = "text-left"><% repo_commits.values.flatten.each do |msg| %>
+    <%= "#{msg};" %>
+    <% end %>
+  </td>
+</tr>
+<% end %>
+</tbody>
+</table>
+</div>
+
+</div>
