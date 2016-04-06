@@ -22,6 +22,8 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 gem 'simplecov', require: false, group: :test

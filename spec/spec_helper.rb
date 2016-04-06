@@ -18,6 +18,16 @@ module SpecHelpers
               }
       })
   end
+
+  def user
+    User.create(
+    uid: "12345",
+    name: "July",
+    token: ENV['GITHUB_TEST_TOKEN'],
+    nickname: "julyytran",
+    image: "https://avatars.githubusercontent.com/u/14022835?v=3"
+    )
+  end
 end
 
 RSpec.configure do |config|

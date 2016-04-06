@@ -5,6 +5,8 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
 require 'simplecov'
+require 'webmock/rspec'
+require 'vcr'
 
 SimpleCov.start
 
@@ -34,4 +36,9 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
+end
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/cassettes"
+  config.hook_into :webmock
 end
