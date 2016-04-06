@@ -1,0 +1,25 @@
+<h1>My Info</h1>
+<%= current_user.nickname %>
+<img src= "<%= current_user.image %>" height="200px">
+
+<h3>Followers: <%= @service.followers.count %></h3>
+<% @service.followers.each do |follower| %>
+  <%= follower["login"] %>
+<% end %>
+
+<h3>Following: <%= @service.following.count %></h3>
+<% @service.following.each do |following| %>
+  <%= following["login"] %>
+<% end %>
+
+<h3>Starred Repos: <%= @service.starred.count %> </h3>
+<% @service.starred.each do |repo| %>
+  <%= repo["full_name"] %>
+<% end %>
+
+<h3>Organizations: <%= @service.organizations.count %> </h3>
+
+<h3>My Repositories: <%= @service.repositories.count %></h3>
+<% @service.repositories.each do |repo| %>
+  <%= repo["name"] %>
+<% end %>

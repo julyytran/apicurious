@@ -1,1 +1,5 @@
-oh hey
+<% if current_user %>
+  <img src= "https://octodex.github.com/images/daftpunktocat-guy.gif" height="500px">
+<% else %>
+  <%= link_to "Please login with Github", github_login_path %>
+<% end %>
