@@ -14,7 +14,7 @@ feature "user can login with github" do
     expect(page).to_not have_link "Login"
   end
 
-  scenario "loggin out" do
+  scenario "logging out" do
     stub_omniauth
     visit "/"
     expect(page.status_code).to eq 200
