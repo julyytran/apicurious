@@ -17,3 +17,6 @@
 
 #Ignore Github OAuth tokens in casettes
 /cassettes
+
+#Ignore simpelcov coverage
+/coverage

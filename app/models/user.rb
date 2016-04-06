@@ -1,4 +1,10 @@
 class User < ActiveRecord::Base
+  validates :uid, presence: true
+  validates :name, presence: true
+  validates :token, presence: true
+  validates :nickname, presence: true
+  validates :image, presence: true
+
   def self.from_omniauth(auth)
     where(uid: auth["uid"]).first_or_create do |user|
       user.uid = auth["uid"]
