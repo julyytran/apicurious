@@ -1,0 +1,7 @@
+<tr>
+  <td><%= repo_commits.keys.first %></td>
+  <td class = "text-left"><% repo_commits.values.flatten.each do |msg| %>
+    <%= "#{msg}; " %>
+    <% end %>
+  </td>
+</tr>
