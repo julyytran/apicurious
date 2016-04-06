@@ -8,9 +8,25 @@ class GithubService
   end
 
   def followers
-    get("/users/#{user.nickname}/followers")
+    get("/user/followers")
   end
 
+  def following
+    get("/user/following")
+  end
+
+  def starred
+    get("/user/starred")
+  end
+
+  def organizations
+    get("/users/#{user.nickname}/orgs")
+  end
+
+  def repositories
+    get("/user/repos")
+  end
+  
 private
 
   def get(path)
