@@ -1,0 +1,6 @@
+<h1>My Info</h1>
+
+<h3>Followers</h3>
+<% @service.followers.each do |follower| %>
+  <%= follower["login"] %>
+<% end %>
