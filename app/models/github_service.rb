@@ -41,6 +41,24 @@ class GithubService
     end
   end
 
+  def following_repo_commits
+    following = get("/user/following")
+
+    all_events = following.map do |follower|
+      get("/users/#{follower["login"]}/events")
+    end.flatten
+
+    pushes = all_events.select do |event|
+      event["type"] == "PushEvent"
+    end
+
+    repo_commits = pushes.map do |push|
+      { push["repo"]["name"] => push["payload"]["commits"].map do |commit|
+        commit["message"]
+      end}
+    end
+  end
+
 private
 
   def get(path)
