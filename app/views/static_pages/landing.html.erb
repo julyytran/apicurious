@@ -1,5 +1,8 @@
+<div class = "container text-center">
 <% if current_user %>
-  <img src= "https://octodex.github.com/images/daftpunktocat-guy.gif" height="500px">
+  <h1>Welcome, <%= current_user.nickname %>! </h1>
+  <img src= "https://octodex.github.com/images/daftpunktocat-guy.gif" height="500px" class='center-block'>
 <% else %>
-  <%= link_to "Please login with Github", github_login_path %>
+<h1> <%= link_to "Please login with Github", github_login_path %> </h1>
+  <img src= "https://octodex.github.com/images/daftpunktocat-thomas.gif" height="500px" class='center-block'>
 <% end %>

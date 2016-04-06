@@ -1,31 +1,42 @@
-<h1>My Info</h1>
-<%= current_user.nickname %>
-<img src= "<%= current_user.image %>" height="200px">
+<div class="container text-center">
 
+<div class ="my-info">
+<h1><%= current_user.nickname %>'s Info</h1>
+<img src= "<%= current_user.image %>" height="200px">
+</div>
+
+<div class = "vertical-buffer">
 <h3>Followers: <%= @service.followers.count %></h3>
 <% @service.followers.each do |follower| %>
-  <%= follower["login"] %>
+<div class = "follow">
+   <%= follower["login"] %>
+ </div>
 <% end %>
+</div>
 
+<div class = style="margin-vertical:100px">
 <h3>Following: <%= @service.following.count %></h3>
 <% @service.following.each do |following| %>
   <%= following["login"] %>
 <% end %>
+</div>
 
+<div class = "vertical-buffer">
 <h3>Starred Repos: <%= @service.starred.count %> </h3>
 <% @service.starred.each do |repo| %>
   <%= repo["full_name"] %>
 <% end %>
+</div>
 
+<div class = "vertical-buffer">
 <h3>Organizations: <%= @service.organizations.count %> </h3>
+<div>
 
+<div class = "vertical-buffer">
 <h3>My Repositories: <%= @service.repositories.count %></h3>
 <% @service.repositories.each do |repo| %>
+<div class= "col-xs-12 col-sm-6 col-md-4 col-lg-3">
   <%= repo["name"] %>
+</div>
 <% end %>
-
-<h3>My Recent Commits</h3>
-<% @service.user_repo_commits.each do |repo_commits| %>
-  <%= repo_commits.keys.first %>
-  <%= repo_commits.values.flatten.join(",") %>
-<% end %>
+</div>
