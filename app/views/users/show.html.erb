@@ -30,6 +30,9 @@
 
 <div class = "vertical-buffer">
 <h3>Organizations: <%= @service.organizations.count %> </h3>
+<% @service.organizations.each do |org| %>
+  <%= org["login"] %>
+<% end %>
 <div>
 
 <div class = "vertical-buffer">
