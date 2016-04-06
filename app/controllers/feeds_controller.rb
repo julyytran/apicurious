@@ -1,5 +1,6 @@
 class FeedsController < ApplicationController
   def index
-    @service = GithubService.new(current_user)
+    @user_pushes = PushEvent.user_pushes(current_user)
+    @following_pushes = PushEvent.following_pushes(current_user)
   end
 end

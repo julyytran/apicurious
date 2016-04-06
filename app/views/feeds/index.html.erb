@@ -1,8 +1,8 @@
 <div class = "container text-center vertical-buffer">
   <h3><%= current_user.nickname %>'s Recent Commits</h3>
   <%= render partial: "/partials/commit_table_heading" %>
-  <% @service.user_repo_commits.each do |repo_commits| %>
-    <%= render partial: "/partials/commit_table_body", locals: { repo_commits: repo_commits } %>
+  <% @user_pushes.each do |push| %>
+    <%= render partial: "/partials/commit_table_body", locals: { push: push } %>
   <% end %>
   </tbody>
   </table>
@@ -11,8 +11,8 @@
 <div class = "container text-center vertical-buffer">
   <h3>Commits by people <%= current_user.nickname %> follows </h3>
   <%= render partial: "/partials/commit_table_heading" %>
-  <% @service.following_repo_commits.each do |repo_commits| %>
-    <%= render partial: "/partials/commit_table_body", locals: { repo_commits: repo_commits }  %>
+  <% @following_pushes.each do |push| %>
+    <%= render partial: "/partials/commit_table_body", locals: { push: push }  %>
   <% end %>
   </tbody>
   </table>

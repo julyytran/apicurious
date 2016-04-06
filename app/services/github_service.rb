@@ -27,27 +27,22 @@ class GithubService
     get("/user/repos")
   end
 
-  def user_repo_commits
+  def user_push_events
     all_events = get("/users/#{user.nickname}/events")
-
-    all_pushes = pushes(all_events)
-
-    repo_commits(all_pushes)
+    pushes(all_events)
   end
 
-  def following_repo_commits
+  def following_push_events
     following = get("/user/following")
 
     all_events = following.map do |follower|
       get("/users/#{follower["login"]}/events")
     end.flatten
 
-    all_pushes = pushes(all_events)
-
-    repo_commits(all_pushes)
+    pushes(all_events)
   end
 
-private
+  private
 
   def get(path)
     JSON.parse(connection.get(path).body)
@@ -56,14 +51,6 @@ private
   def pushes(all_events)
     all_events.select do |event|
       event["type"] == "PushEvent"
-    end
-  end
-
-  def repo_commits(all_pushes)
-    all_pushes.map do |push|
-      {push["repo"]["name"] => push["payload"]["commits"].map do |commit|
-        commit["message"]
-      end}
     end
   end
 end

@@ -6,40 +6,40 @@
 </div>
 
 <div class = "vertical-buffer">
-<h3>Followers: <%= @service.followers.count %></h3>
-<% @service.followers.each do |follower| %>
+<h3>Followers: <%= @followers.count %></h3>
+<% @followers.each do |follower| %>
 <div class = "follow">
-   <%= follower["login"] %>
+   <%= follower.login %>
  </div>
 <% end %>
 </div>
 
 <div class = style="margin-vertical:100px">
-<h3>Following: <%= @service.following.count %></h3>
-<% @service.following.each do |following| %>
-  <%= following["login"] %>
+<h3>Following: <%= @following.count %></h3>
+<% @following.each do |following| %>
+  <%= following.login %>
 <% end %>
 </div>
 
 <div class = "vertical-buffer">
-<h3>Starred Repos: <%= @service.starred.count %> </h3>
-<% @service.starred.each do |repo| %>
-  <%= repo["full_name"] %>
+<h3>Starred Repos: <%= @starred.count %> </h3>
+<% @starred.each do |repo| %>
+  <%= repo.full_name %>
 <% end %>
 </div>
 
 <div class = "vertical-buffer">
-<h3>Organizations: <%= @service.organizations.count %> </h3>
-<% @service.organizations.each do |org| %>
-  <%= org["login"] %>
+<h3>Organizations: <%= @organizations.count %> </h3>
+<% @organizations.each do |org| %>
+  <%= org.login %>
 <% end %>
 <div>
 
 <div class = "vertical-buffer">
-<h3>My Repositories: <%= @service.repositories.count %></h3>
-<% @service.repositories.each do |repo| %>
+<h3>My Repositories: <%= @repositories.count %></h3>
+<% @repositories.each do |repo| %>
 <div class= "col-xs-12 col-sm-6 col-md-4 col-lg-3">
-  <%= repo["name"] %>
+  <%= repo.name %>
 </div>
 <% end %>
 </div>

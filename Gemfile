@@ -18,15 +18,17 @@ gem 'faraday'
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-nav'
-  gem 'rspec-rails', '~> 3.0'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'vcr'
-  gem 'webmock'
 end
 
-gem 'simplecov', require: false, group: :test
+group :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'webmock'
+  gem 'simplecov', require: false
+end
 
 group :development do
   gem 'web-console', '~> 2.0'
