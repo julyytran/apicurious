@@ -1,7 +1,0 @@
-<tr>
-  <td><%= push.repo["name"] %></td>
-  <td class = "text-left"><% push.payload["commits"].each do |commit| %>
-    <%= commit["message"] %>;
-    <% end %>
-  </td>
-</tr>
